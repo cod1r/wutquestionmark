@@ -1,4 +1,4 @@
-<?php require 'index.php';require 'mysql.php';
+<?php require 'mysql.php';
 function display_name(){
     GLOBAL $dbh;
     foreach($dbh->query("SELECT username, sessionID FROM credentials") as $row){
@@ -16,6 +16,11 @@ function list_questions(){
         }
     }
 }
-require './profile/profile.html';
 
+if (isset($_GET["signout"])){
+    session_destroy();
+    ob_clean();
+    header("Location: ./login.php");
+}
+require './profile/profile.html';
 ?>

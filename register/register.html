@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <?php require './includes/head_tags.php'; ?>
+        <link rel="stylesheet" href="/register/register.css">
+    </head>
+    <body>
+        <?php require './includes/nav_bar.php'; ?>
+        <div class="container-fluid formcontainer">
+            <form action="../register.php" method="POST">
+                <div class="typed">
+                    <input type="email" name='email' placeholder="Email">
+                    <input type="text" name='username' placeholder="Username" required>
+                    <input type="password" name='password' placeholder="Password" required>
+                    <input type="submit" value="Register">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

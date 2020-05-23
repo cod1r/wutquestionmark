@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
-    <head></head>
+    <head>
+        <?php require './includes/head_tags.php'; ?>
+        <link rel="stylesheet" href="/login/login.css">
+    </head>
     <body>
-        <form action="../login.php" method="POST">
-            <input type="text" name='username'>
-            <input type="password" name='password'>
-            <input type="submit">
-        </form>
-        
+        <?php require './includes/nav_bar.php'; ?>
+        <div class="container" style="padding-top: 5%;">
+            <div class="formcontainer">
+                <form action="../login.php" method="POST">
+                    <div class="typed">
+                        <input type="text" name='username' placeholder="Username" required>
+                        <input type="password" name='password' placeholder="Password" required>
+                        <input type="submit" value="Login">
+                    </div>
+                </form>
+                <button><a href="register.php" style="color: black; text-decoration: none;">Register?</a></button>
+            </div>
+        </div>
     </body>
 </html>
