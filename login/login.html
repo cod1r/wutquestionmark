@@ -7,15 +7,20 @@
     <body>
         <?php require './includes/nav_bar.php'; ?>
         <div class="container" style="padding-top: 5%;">
-            <div class="formcontainer">
+            <div>
                 <form action="../login.php" method="POST">
-                    <div class="typed">
-                        <input type="text" name='username' placeholder="Username" required>
-                        <input type="password" name='password' placeholder="Password" required>
-                        <input type="submit" value="Login">
-                    </div>
-                </form>
-                <button><a href="register.php" style="color: black; text-decoration: none;">Register?</a></button>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Username</label>
+                          <input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="usernameHelp" placeholder="Enter Username" name="username">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+                      <br>
+                <button type="button" class="btn btn-primary"><a href="register.php" style="color: black; text-decoration: none;">Register?</a></button>
             </div>
         </div>
     </body>

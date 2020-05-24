@@ -12,14 +12,12 @@ function list_questions(){
     GLOBAL $dbh;
     foreach(($dbh->query("SELECT questionsasked.question, questionsasked.username FROM questionsasked LEFT JOIN credentials ON questionsasked.username = credentials.username")) as $row){
         if ($row["username"] == $_SESSION["username"]){
-            echo "<li class='list-group-item'>" . $row["question"] . "</li>";
+            echo "<li class='list-group-item'><a href='/questionpage.php?question=" . $row['question'] . "'>" . $row["question"] . "</a></li>";
         }
     }
 }
-
 if (isset($_GET["signout"])){
     session_destroy();
-    ob_clean();
     header("Location: ./login.php");
 }
 require './profile/profile.html';

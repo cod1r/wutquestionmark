@@ -8,14 +8,14 @@
         <?php require './includes/nav_bar.php'; ?>
         <div class="container" style="padding-top: 10px;">
             <h1 class="usernames"><?php display_name(); ?></h1>
-            <div style="text-align: center;"><form action="/profile.php" method="GET"><button name="signout">Sign out</button></form></div>
+            <div style="text-align: center;"><form action="/profile.php" method="GET"><button name="signout" class="btn btn-primary">Sign out</button></form></div>
             <br>
             <div class="row">
                 <div class="col-sm">
                     <h4 style="text-align: center;">Questions asked</h4>
-                    <ul class="list-group">
-                        <?php list_questions() ?>
-                      </ul>
+                        <ul class="list-group">
+                                <?php list_questions() ?>
+                        </ul>
                 </div>
                 <div class="col-sm">
                     <h4 style="text-align: center;">Questions answered</h4>

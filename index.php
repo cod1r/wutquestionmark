@@ -1,1 +1,4 @@
-<?php require './homepage/home.html'; ?>
+<?php 
+require './session.php';
+require './homepage/home.html'; 
+?>
