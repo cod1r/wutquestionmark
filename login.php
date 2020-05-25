@@ -17,6 +17,7 @@ if (isset($_POST['username']) && isset($_POST['password'])){
             $_SESSION["username"] = $row["username"];
             $_SESSION["authenticated"] = true;
             header("Location: ./profile.php");
+            break;
         }
     }
 }

@@ -3,9 +3,9 @@ require './mysql.php';
 require './questionpage/questionpage.html';
 
 // need to write function that loads question
-function load_question($bool=false){
+function load_question($bool=FALSE){
     if ($bool){
-        echo $_GET['question'];
+        echo htmlspecialchars($_GET['question']);
     }
     else{
         http_response_code(404);
@@ -14,10 +14,10 @@ function load_question($bool=false){
     }
 }
 
-function verifyquestion($verify=NULL){
+function verifyquestion(){
     GLOBAL $dbh;
     foreach($dbh->query("SELECT question FROM questionsasked") as $row){
-        if ($row['question'] == $_GET['question'] || $row['question'] == $verify){
+        if ($row['question'] == $_GET['question']){
             load_question(TRUE);
             return True;
         }
