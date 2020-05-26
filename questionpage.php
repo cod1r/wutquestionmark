@@ -15,13 +15,15 @@ function load_question($bool=FALSE){
 }
 
 function verifyquestion(){
-    GLOBAL $dbh;
+    if (isset($_GET['question'])){
+        GLOBAL $dbh;
     foreach($dbh->query("SELECT question FROM questionsasked") as $row){
         if ($row['question'] == $_GET['question']){
             load_question(TRUE);
             return True;
         }
     }
+}
     load_question(False);
     return False;
 }

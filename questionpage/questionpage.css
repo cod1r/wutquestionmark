@@ -1,0 +1,11 @@
+.answerBox{
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+    resize: none;
+    outline: none;
+}
+
+#answerArea{
+    display: none;
+}

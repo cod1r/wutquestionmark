@@ -21,4 +21,8 @@ if (isset($_POST['username']) && isset($_POST['password'])){
         }
     }
 }
+// if username exists already
+// <div class="alert alert-primary" role="alert">
+//   A simple primary alert—check it out!
+// </div>
 ?>

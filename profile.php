@@ -17,13 +17,13 @@ function list_questions(){
         }
     }
     foreach($questions as $key => $value){
-        echo "<li class='list-group-item'><a href='/questionpage.php?question=" . urlencode($value) . "'>" . substr($value, 0, 40) . "</a><form style='float:right;' method='POST'><button class='btn btn-primary' name='delete' value='" . $value . "'>Delete?</button></form></li>";
+        echo "<li class='list-group-item'><a href='/questionpage.php?question=" . urlencode($value) . "'>" . htmlspecialchars(substr($value, 0, 40)) . "</a><form style='float:right;' method='POST'><button class='btn btn-primary' name='delete' value='" . urlencode($value) . "'>Delete?</button></form></li>";
     }
 }
 
 if (isset($_POST['delete'])){
     $stmt = $dbh->prepare("DELETE FROM questionsasked WHERE username = ? and question = ?");
-    $stmt->execute(array($_SESSION["username"], $_POST['delete']));
+    $stmt->execute(array($_SESSION["username"], urldecode($_POST['delete'])));
     header("Location: ./profile.php");
 }
 
