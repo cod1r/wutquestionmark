@@ -7,17 +7,23 @@
     <body>
         <?php require './includes/nav_bar.php'; ?>
         <div class="container" style="padding-top: 10px;">
-            <p style="text-align: center; font-size: 150%;"><?php verifyquestion(); ?></p>
+            <p id="TheQuestion" style="text-align: center; font-size: 150%;"><?php $bool = verifyquestion(); ?></p>
         </div>
         <div class="container" style="text-align: center; padding-top: 2rem;">
             <div id="answerArea" class="container">
                 <button class="btn btn-primary" id="answerNot">&#10005;</button>
-                <form id="answerForm" action="">
-                <textarea name="answerQ" id="" cols="30" rows="10" class="answerBox" placeholder="Write your answer..."></textarea>
-                <button type="submit" class="btn btn-primary" disabled>Submit</button>
-            </form>
+                <form id="answerForm" method="POST">
+                    <textarea name="answerToQ" id="" cols="30" rows="10" class="answerBox" placeholder="Write your answer..."></textarea>
+                    <button id="submitQuestion" type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
             <button class="btn btn-primary" id="answerButton">Answer</button>
+        </div>
+        <div class="container" style="text-align: center;padding-top: 20px;">
+            <div id="answers">
+                <h4>Possible answers</h4>
+                <?php load_answers($bool) ?>
+            </div>
         </div>
         <script src="/questionpage/questionpage.js"></script>
     </body>
