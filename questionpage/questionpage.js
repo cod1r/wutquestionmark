@@ -9,16 +9,19 @@ document.getElementById('answerNot').onclick = function disappear(){
 }
 
 
-function refreshAnswers(){
+document.getElementById('submitQuestion').onclick = function refreshAnswers(){
     var xmlhttp = new XMLHttpRequest ();
     xmlhttp.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
-            var parser = new DOMParser();
-            document.getElementById('answers').innerHTML = parser.parseFromString(this.responseText, "text/html");
+            document.getElementById('answers').innerHTML = this.response.getElementById('answers').innerHTML;
+            window.location.reload();
         }
     }
     xmlhttp.open("GET", "questionpage.php?question="+document.getElementById('TheQuestion').innerHTML,true);
+    xmlhttp.responseType = 'document';
     xmlhttp.send();
 }
 
-// setInterval(refreshAnswers, 5000);
+if ( window.history.replaceState ) {
+    window.history.replaceState( null, null, window.location.href );
+}
