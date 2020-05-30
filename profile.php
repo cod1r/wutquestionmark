@@ -1,35 +1,55 @@
 <?php require 'mysql.php';
+
+if (isset($_GET["signout"]) && isset($_SESSION['username'])){
+    session_destroy();
+    echo $_GET['profile'];
+    header("Location: ./login.php");
+}
+
+
 function display_name(){
     GLOBAL $dbh;
     foreach($dbh->query("SELECT username, sessionID FROM credentials") as $row){
-        if ($row["sessionID"] == session_id()){
+        if ($row["username"] == $_GET['profile']){
             echo $row["username"];
-            break;
+            return True;
         }
     }
+        header("Location: ./NotFound.php");
 }
 function list_questions(){
     $questions = array();
     GLOBAL $dbh;
     foreach(($dbh->query("SELECT questionsasked.question, questionsasked.username FROM questionsasked LEFT JOIN credentials ON questionsasked.username = credentials.username")) as $row){
-        if ($row["username"] == $_SESSION["username"]){
+        if ($row["username"] == $_GET["profile"]){
             $questions[] = $row['question'];
         }
     }
     foreach($questions as $key => $value){
-        echo "<li class='list-group-item'><a href='/questionpage.php?question=" . urlencode($value) . "'>" . htmlspecialchars(substr($value, 0, 40)) . "</a><form style='float:right;' method='POST'><button class='btn btn-primary' name='delete' value='" . urlencode($value) . "'>Delete?</button></form></li>";
+        echo "<li class='list-group-item'><a href='/questionpage.php?question=" . urlencode($value) . "'>" . htmlspecialchars(substr($value, 0, 40)) . "</a></li>";
     }
 }
 
-if (isset($_POST['delete'])){
-    $stmt = $dbh->prepare("DELETE FROM questionsasked WHERE username = ? and question = ?");
-    $stmt->execute(array($_SESSION["username"], urldecode($_POST['delete'])));
-    header("Location: ./profile.php");
+function list_answers(){
+    $questions = array();
+    GLOBAL $dbh;
+    $stmt = $dbh->prepare("SELECT * FROM questionsanswered WHERE username=?");
+    $stmt->execute(array($_GET['profile']));
+    foreach($stmt->fetchAll() as $row){
+        if ($row["username"] == $_GET["profile"] && !in_array($row['question'], $questions)){
+            $questions[] = $row['question'];
+        }
+    }
+    foreach($questions as $key => $value){
+        echo "<li class='list-group-item'><a href='/questionpage.php?question=" . urlencode($value) . "'>" . htmlspecialchars(substr($value, 0, 40)) . "</a></li>";
+    }
 }
 
-if (isset($_GET["signout"])){
-    session_destroy();
-    header("Location: ./login.php");
+function is_user(){
+    if ($_SESSION['username'] == $_GET['profile']){
+        echo '<form action="/profile.php" method="GET"><input name="profile" type="hidden" value="' . $_SESSION['username'] . '"/><button name="signout" class="btn btn-primary">Sign out</button></form>';
+    }
 }
+
 require './profile/profile.html';
 ?>

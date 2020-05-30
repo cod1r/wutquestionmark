@@ -7,9 +7,6 @@ function load_question($bool=FALSE){
     if ($bool){
         echo htmlspecialchars($_GET['question']);
     }
-    else{
-        header("Location ./NotFound.php");
-    }
 }
 
 function verifyquestion(){
@@ -22,8 +19,7 @@ function verifyquestion(){
         }
     }
 }
-    load_question(False);
-    return False;
+    header("Location: ./NotFound.php");
 }
 
 function load_answers($bool=FALSE){
