@@ -2,25 +2,24 @@
 <html>
     <head>
         <?php require './includes/head_tags.php'; ?>
-        <link rel="stylesheet" href="/login/login.css">
+        <link rel="stylesheet" href="./login/login.css">
     </head>
     <body>
         <?php require './includes/nav_bar.php'; ?>
-        <div class="container" style="padding-top: 5%;">
-            <div>
-                <form action="./login.php" method="POST" autocomplete="off">
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Username</label>
-                          <input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="usernameHelp" placeholder="Enter Username" name="username">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                      </form>
-                      <br>
-                <button type="button" class="btn btn-primary"><a href="register.php" style="color: white; text-decoration: none;">Register?</a></button>
+        <div class="container LoginArea" >
+          <div class="imageLogin"><img src="./assets/1546121659.svg" alt=""></div>
+          <h1>Wu?</h1>
+          <br>
+          <br>
+            <div class="Login">
+                    <form action="./login.php" method="POST" autocomplete="off">
+                      Cure your Curiosities
+                      <input type="username" placeholder="Username" name="username">
+                      <input type="password" placeholder="Password" name="password">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    Don't have an account yet?
+                    <a href="register.php" style="text-decoration: none;">Create an account</a>
             </div>
         </div>
     </body>
