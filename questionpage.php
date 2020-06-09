@@ -29,11 +29,12 @@ function load_answers($bool=FALSE){
         $stmt->execute(array($_GET['question']));
         foreach($stmt->fetchAll() as $row){
             echo '<div id="answer" style="border: 1px solid grey;border-radius: 5px; margin: 10px">
-                        <h5 style="text-align: left; border-bottom: 1px solid grey; background-color: #5bc0de; padding: 5px; box-shadow: 0px 3px 5px black"><a style="text-decoration: none; color: black;" href="/profile.php?profile=' . urlencode($row['username']) .'">'. $row['username'] .'</a></h5>
+                        <h5 style="text-align: left; border-bottom: 1px solid grey; background-color: #5bc0de; padding: 5px; box-shadow: 0px 3px 5px black">
+                        <a style="text-decoration: none; color: black;" href="/profile.php?profile=' . urlencode($row['username']) .'">'. $row['username'] .'</a></h5>
                             <p style="text-align: left; padding: 0px 5px 0px 5px;">'
                                 . $row['answer'] .
                              '</p>
-                     </div>';
+                 </div>';
         }
     }
 }
