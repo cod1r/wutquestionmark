@@ -1,15 +1,3 @@
-.answerBox{
-    border-radius: 10px;
-    width: 100%;
-    padding: 10px;
-    resize: none;
-    outline: none;
-}
-
-#answerArea{
-    display: none;
-}
-
 button{
     padding-left: 40px;
     padding-right: 40px;
@@ -25,11 +13,20 @@ button:hover {
     background-color: lightslategray;
 }
 
-#answer{
-    border-bottom: 1px solid black;
-    margin: 10px;
+
+.answerBox{
+    margin-top: 10%;
 }
 
-div > h5 {
-    text-align: left;
+input{
+    padding: 10px;
+    width: 100%;
+    margin: 10px;
+    border-style: none;
+    font-size: 30px;
+    border-bottom: 1px solid black;
+}
+
+input:focus{
+    outline: none;
 }

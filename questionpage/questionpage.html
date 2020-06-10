@@ -2,7 +2,7 @@
 <html>
     <head>
         <?php require './includes/head_tags.php'; ?>
-        <link rel="stylesheet" href="/questionpage/questionpage.css">
+        <link rel="stylesheet" href="./questionpage/questionpage.css">
     </head>
     <body>
         <?php require './includes/nav_bar.php'; ?>
@@ -11,20 +11,20 @@
         </div>
         <div class="container" style="text-align: center; padding-top: 2rem;">
             <div id="answerArea" class="container">
-                <button class="btn btn-primary" id="answerNot">&#10005;</button>
+                <button id="answerNot">&#10005;</button>
                 <form id="answerForm" method="POST">
                     <textarea name="answerToQ" id="" cols="30" rows="10" class="answerBox" placeholder="Write your answer..."></textarea>
-                    <button id="submitQuestion" type="submit" class="btn btn-primary">Submit</button>
+                    <button id="submitQuestion" type="submit">Submit</button>
                 </form>
             </div>
-            <button class="btn btn-primary" id="answerButton">Answer</button>
+            <button id="answerButton">Answer</button>
         </div>
         <div class="container" style="text-align: center;padding-top: 20px;">
             <div id="answers">
-                <h4>Possible answers</h4>
+                <h4>Replies</h4>
                 <?php load_answers($bool) ?>
             </div>
         </div>
-        <script src="/questionpage/questionpage.js"></script>
+        <script src="./questionpage/questionpage.js"></script>
     </body>
 </html>

@@ -33,3 +33,18 @@ form{
     margin-top: 20%;
 }
 
+
+button{
+    padding-left: 40px;
+    padding-right: 40px;
+    outline: none;
+    border-radius: 50px;
+    color: white;
+    border-style: none;
+    background-color: black;
+    transition: background-color .5s;
+}
+
+button:hover {
+    background-color: lightslategray;
+}

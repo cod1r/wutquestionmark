@@ -26,7 +26,7 @@ function list_questions(){
         }
     }
     foreach($questions as $key => $value){
-        echo "<li class='list-group-item'><a href='/questionpage.php?question=" . urlencode($value) . "'>" . htmlspecialchars(substr($value, 0, 40)) . "</a></li>";
+        echo "<li class='list-group-item'><a href='/questionpage.php?question=" . urlencode($value) . "'>" . htmlspecialchars(($value)) . "</a></li>";
     }
 }
 
@@ -41,13 +41,13 @@ function list_answers(){
         }
     }
     foreach($questions as $key => $value){
-        echo "<li class='list-group-item'><a href='/questionpage.php?question=" . urlencode($value) . "'>" . htmlspecialchars(substr($value, 0, 40)) . "</a></li>";
+        echo "<li class='list-group-item'><a href='/questionpage.php?question=" . urlencode($value) . "'>" . htmlspecialchars(($value)) . "</a></li>";
     }
 }
 
 function is_user(){
     if ($_SESSION['username'] == $_GET['profile']){
-        echo '<form action="/profile.php" method="GET"><input name="profile" type="hidden" value="' . $_SESSION['username'] . '"/><button name="signout" class="btn btn-primary">Sign out</button></form>';
+        echo '<form action="/profile.php" method="GET"><input name="profile" type="hidden" value="' . $_SESSION['username'] . '"/><button name="signout">Sign out</button></form>';
     }
 }
 
