@@ -2,7 +2,7 @@
 return [
     'host' => 'localhost',
     'name' => 'quora2',
-    'user' => 'root',
+    'user' => 'postgres',
     'pass' => 'root'
 ];
 ?>
