@@ -1,5 +1,5 @@
 <?php
-require 'mysql.php';
+require 'dbfile.php';
 require './register/register.html';
 
 if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST["email"])){

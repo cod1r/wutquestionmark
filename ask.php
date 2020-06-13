@@ -1,5 +1,5 @@
 <?php
-    require './mysql.php';
+    require './dbfile.php';
     require './ask/ask.html';
 
     if(isset($_POST["ask"]) && isset($_SESSION["authenticated"]) && strlen($_POST['ask']) > 0){
