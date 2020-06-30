@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <?php require './includes/head_tags.php'; ?>
-        <link rel="stylesheet" href="./questionpage/questionpage.css">
+        <?php require '../includes/head_tags.php'; ?>
+        <link rel="stylesheet" href="./css/questionpage.css">
     </head>
     <body>
-        <?php require './includes/nav_bar.php'; ?>
+        <?php require '../includes/nav_bar.php'; ?>
         <div class="container" style="padding-top: 10px;">
             <p id="TheQuestion" style="text-align: center; font-size: 150%;"><?php $bool = verifyquestion(); ?></p>
         </div>
@@ -25,6 +25,6 @@
                 <?php load_answers($bool) ?>
             </div>
         </div>
-        <script src="./questionpage/questionpage.js"></script>
+        <script src="./javascript/questionpage.js"></script>
     </body>
 </html>

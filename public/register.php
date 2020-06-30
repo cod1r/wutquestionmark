@@ -1,6 +1,6 @@
 <?php
-require 'dbfile.php';
-require './register/register.html';
+require '../dbfile.php';
+require '../register/register.html';
 
 if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST["email"])){
     $result = pg_prepare($dbh,'query', "INSERT INTO credentials (username, password, sessionID , email) VALUES ($1, $2, $3, $4)");

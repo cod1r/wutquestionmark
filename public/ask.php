@@ -1,6 +1,6 @@
 <?php
-    require './dbfile.php';
-    require './ask/ask.html';
+    require '../dbfile.php';
+    require '../ask/ask.html';
 
     if(isset($_POST["ask"]) && isset($_SESSION["authenticated"]) && strlen($_POST['ask']) > 0){
         $stmt = pg_prepare($dbh,'query', "INSERT INTO questionsasked (username, question) VALUES ($1, $2)");

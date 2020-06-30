@@ -1,4 +1,4 @@
-<?php require 'dbfile.php';
+<?php require '../dbfile.php';
 
 if (isset($_GET["signout"]) && isset($_SESSION['username'])){
     session_destroy();

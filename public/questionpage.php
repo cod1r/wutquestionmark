@@ -1,6 +1,6 @@
 <?php
-require './dbfile.php';
-require './questionpage/questionpage.html';
+require '../dbfile.php';
+require '../questionpage/questionpage.html';
 // $result = pg_prepare($dbh,'q', "INSERT INTO questionsanswered (answer, question, username) VALUES ($1, $2, $3)");
 // $result = pg_execute($dbh,'q', array('a', $_GET['question'], $_SESSION['username']));
 // need to write function that loads question

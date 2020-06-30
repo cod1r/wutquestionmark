@@ -1,5 +1,5 @@
 <?php 
-require 'dbfile.php';
+require '../dbfile.php';
 if(isset($_SESSION["authenticated"]))
     {
         global $dbh;
