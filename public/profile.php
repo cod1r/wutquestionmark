@@ -60,5 +60,5 @@ function is_user(){
     }
 }
 
-require './profile/profile.html';
+require '../profile/profile.html';
 ?>
