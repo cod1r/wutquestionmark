@@ -11,7 +11,7 @@ function display_name(){
     GLOBAL $dbh;
     foreach($dbh->query("SELECT username, sessionID FROM credentials") as $row){
         if ($row["username"] == $_GET['profile']){
-            echo $row["username"];
+            echo htmlspecialchars($row["username"]);
             return True;
         }
     }
