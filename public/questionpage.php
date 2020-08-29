@@ -51,7 +51,6 @@ function load_answers($bool=FALSE){
 if(isset($_POST['answerToQ'])){
     $result = pg_prepare($dbh,'answer', "INSERT INTO questionsanswered (answer, question, username) VALUES ($1, $2, $3)");
     $result = pg_execute($dbh,'answer', array($_POST['answerToQ'], $_GET['question'], $_SESSION['username']));
-    echo 'hi';
 }
 
 ?>
