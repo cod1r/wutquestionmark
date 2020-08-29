@@ -13,7 +13,7 @@ function display_name(){
     $result = pg_fetch_all($result, 1);
     foreach($result as $row){
         if ($row["username"] == $_GET['profile']){
-            echo $row["username"];
+            echo htmlspecialchars($row["username"]);
             return True;
         }
     }
