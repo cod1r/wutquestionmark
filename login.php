@@ -1,5 +1,5 @@
 <?php 
-require 'mysql.php';
+require './mysql.php';
     foreach ($dbh->query("SELECT username, sessionID FROM credentials") as $row){
         if ($row["sessionID"] == session_id() && isset($_SESSION["authenticated"])){
             $_SESSION["username"] = $row["username"];

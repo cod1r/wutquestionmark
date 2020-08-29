@@ -1,4 +1,4 @@
-<?php require 'mysql.php';
+<?php require './mysql.php';
 
 if (isset($_GET["signout"]) && isset($_SESSION['username'])){
     session_destroy();
@@ -50,6 +50,5 @@ function is_user(){
         echo '<form action="/profile.php" method="GET"><input name="profile" type="hidden" value="' . $_SESSION['username'] . '"/><button name="signout">Sign out</button></form>';
     }
 }
-
 require './profile/profile.html';
 ?>
