@@ -8,6 +8,6 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST["emai
     $_SESSION["username"] = $_POST["username"];
     $_SESSION["authenticated"] = true;
     ob_clean();
-    header("Location: ./profile.php?profile=" . htmlspecialchars($_POST['username']));
+    header("Location: ./profile.php?profile=" . $_POST['username']);
 }
 ?>
