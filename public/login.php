@@ -6,7 +6,7 @@ if(isset($_SESSION["authenticated"]))
         $result = pg_query($dbh, "SELECT username, sessionid, password FROM credentials");
         $result = pg_fetch_all($result, 1);
         foreach ($result as $row){
-            if ($row["sessionid"] == session_id()){
+            if ($row["sessionID"] == session_id()){
                 $_SESSION["username"] = $row["username"];
                 header("Location: ./profile.php?profile=" . $row['username']);
                 break;
