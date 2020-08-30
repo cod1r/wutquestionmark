@@ -13,7 +13,7 @@ if(isset($_SESSION["authenticated"]))
             }
         }
     }
-    require '../login/login.html';
+require '../login/login.html';
 
 if (isset($_POST['username']) && isset($_POST['password'])){
     $result = pg_query($dbh, "SELECT username, sessionid, password FROM credentials");
