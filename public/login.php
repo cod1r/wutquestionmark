@@ -3,7 +3,7 @@ require '../dbfile.php';
 if(isset($_SESSION["authenticated"]))
     {
         global $dbh;
-        $result = pg_query($dbh, "SELECT username, sessionid, password FROM credentials");
+        $result = pg_query($dbh, "SELECT username, sessionID, password FROM credentials");
         $result = pg_fetch_all($result, 1);
         foreach ($result as $row){
             if ($row["sessionID"] == session_id()){
