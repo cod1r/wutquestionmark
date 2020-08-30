@@ -19,7 +19,7 @@ if (isset($_POST['username']) && isset($_POST['password'])){
     $result = pg_query($dbh, "SELECT username, sessionid, password FROM credentials");
     $result = pg_fetch_all($result, 1);
     foreach($result as $row){
-        if ($row["username"] == $_POST["username"] && $row["password"] == $_POST["password"]){
+        if ($row["username"] == $_POST["username"] && password_verify($_POST["password"], $row["password"])){
             $stmt2 = pg_prepare($dbh,'hi', "UPDATE credentials SET sessionid = $1 WHERE username =  $2 AND password = $3"); 
             $stmt2 = pg_execute($dbh,'hi', array(session_id(), 'jasonho', '123456'));
             $_SESSION['success'] = $stmt2;
