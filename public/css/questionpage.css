@@ -1,0 +1,35 @@
+.answerBox{
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+    resize: none;
+    outline: none;
+}
+
+#answerArea{
+    display: none;
+}
+
+button{
+    padding-left: 40px;
+    padding-right: 40px;
+    outline: none;
+    border-radius: 50px;
+    color: white;
+    border-style: none;
+    background-color: black;
+    transition: background-color .5s;
+}
+
+button:hover {
+    background-color: lightslategray;
+}
+
+#answer{
+    border-bottom: 1px solid black;
+    margin: 10px;
+}
+
+div > h5 {
+    text-align: left;
+}
