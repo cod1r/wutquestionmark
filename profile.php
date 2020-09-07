@@ -48,7 +48,7 @@ function list_answers(){
 
 function is_user(){
     if ($_SESSION['username'] == $_GET['profile']){
-        echo '<form action="/profile.php" method="GET"><input name="profile" type="hidden" value="' . $_SESSION['username'] . '"/><button name="signout">Sign out</button></form>';
+        echo '<form action="/profile.php" method="GET"><input name="profile" type="hidden" value="' . $_SESSION['username'] . '"/><button class="sign-out" name="signout">Sign out</button></form>';
     }
 }
 

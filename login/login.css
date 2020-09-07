@@ -12,7 +12,7 @@
     column-gap: 0;
 }
 
-input{
+.login-input{
     border-top: 0;
     border-left: 0;
     border-right: 0;
@@ -29,7 +29,7 @@ input:focus{
     outline: none;
 }
 
-form{
+.sign-in{
     margin-top: 20%;
 }
 

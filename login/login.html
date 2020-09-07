@@ -6,16 +6,16 @@
     </head>
     <body>
         <?php require './includes/nav_bar.php'; ?>
-        <div class="container LoginArea" >
+        <div class="container LoginArea" style="padding-top: 50px;">
           <div class="imageLogin"><img src="./assets/1546121659.svg" alt=""></div>
           <h1>Wu?</h1>
           <br>
           <br>
             <div class="Login">
-                    <form action="./login.php" method="POST" autocomplete="off">
+                    <form action="./login.php" method="POST" class="sign-in" autocomplete="off">
                       Cure your Curiosities
-                      <input type="username" placeholder="Username" name="username">
-                      <input type="password" placeholder="Password" name="password">
+                      <input class="login-input" type="username" placeholder="Username" name="username">
+                      <input class="login-input"type="password" placeholder="Password" name="password">
                       <button type="submit">Sign in</button>
                     </form>
                     Don't have an account yet?
