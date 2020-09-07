@@ -12,7 +12,7 @@
     column-gap: 0;
 }
 
-input{
+.login-input{
     border-top: 0;
     border-left: 0;
     border-right: 0;
@@ -25,16 +25,16 @@ input{
     width: 80%;
 }
 
-input:focus{
+.login-input:focus{
     outline: none;
 }
 
-form{
+.sign-in{
     margin-top: 20%;
 }
 
 
-button{
+.sign-in-button{
     padding-left: 40px;
     padding-right: 40px;
     outline: none;
@@ -45,6 +45,6 @@ button{
     transition: background-color .5s;
 }
 
-button:hover {
+.sign-in-button:hover {
     background-color: lightslategray;
 }

@@ -3,7 +3,7 @@
 }
 
 
-button{
+.sign-out{
     padding-left: 40px;
     padding-right: 40px;
     outline: none;
@@ -14,7 +14,7 @@ button{
     transition: background-color .5s;
 }
 
-button:hover {
+.sign-out:hover {
     background-color: lightslategray;
 }
 

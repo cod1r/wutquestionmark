@@ -1,0 +1,9 @@
+.search-result{
+    list-style-type: none;
+    text-align: center;
+}
+
+.search-result-list{
+    padding: 0;
+    margin: 0;
+}

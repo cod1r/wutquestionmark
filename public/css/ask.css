@@ -1,4 +1,4 @@
-button{
+.ask-submit{
     padding-left: 40px;
     padding-right: 40px;
     outline: none;
@@ -9,7 +9,7 @@ button{
     transition: background-color .5s;
 }
 
-button:hover {
+.ask-submit:hover {
     background-color: lightslategray;
 }
 
@@ -18,7 +18,7 @@ button:hover {
     margin-top: 10%;
 }
 
-input{
+.ask-input{
     padding: 10px;
     width: 100%;
     margin: 10px;
@@ -27,6 +27,6 @@ input{
     border-bottom: 1px solid black;
 }
 
-input:focus{
+.ask-input:focus{
     outline: none;
 }
